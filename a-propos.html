@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À propos – Samuel Coaching, coach sportif à Paris</title>
+<meta name="description" content="Qui est Sam ? Coach sportif diplômé (BPJEPS) à Paris : ses valeurs, sa méthode, sa façon de coacher avec exigence et bonne humeur.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/favicon-192.png">
+<meta property="og:title" content="À propos – Samuel Coaching, coach sportif à Paris">
+<meta property="og:description" content="Qui est Sam ? Coach sportif diplômé (BPJEPS) à Paris : ses valeurs, sa méthode, sa façon de coacher avec exigence et bonne humeur.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon-192.png" alt="">SAMUEL COACHING</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <ul>
+        <li><a href="a-propos.html" class="actif">À propos</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="prepa-competition.html">Prépa compétition</a></li>
+        <li><a href="sport-sante.html">Sport santé</a></li>
+        <li><a href="programmation.html">Programmation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Réserver</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="about" id="apropos" style="background:var(--sable-2)">
+  <div class="wrap">
+    <img src="img/apropos.jpg" alt="Portrait de Samuel Ben Hamou">
+    <div>
+      <span class="kicker">À propos</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--bleu);margin-bottom:.6rem">Moi, c'est Sam</h1>
+      <p><strong>Coach sportif diplômé (BPJEPS) à Paris.</strong> En salle, à domicile ou en entreprise.<br>Coaching individuel, small group, prépa Hyrox, ATHX et CrossFit, remise en forme, perte de poids, sport santé : je t'accompagne quel que soit ton objectif.</p>
+      <p class="accroche-about">Mon job ? Te faire progresser. Vraiment.</p>
+      <p>On avance ensemble, séance après séance, et on mesure le chemin parcouru.</p>
+      <ul class="atouts">
+        <li><strong>Ta progression avant tout</strong>Chaque séance a un objectif, chaque cycle un cap. On suit tes progrès pour que tu les voies, et que tu en sois fier.</li>
+        <li><strong>À ton écoute</strong>Ta forme du jour, tes contraintes, tes douleurs : le programme s'adapte à toi, pas l'inverse.</li>
+        <li><strong>Le sourire en plus</strong>On transpire, on travaille dur… et on rigole. Le plaisir, c'est ce qui donne envie de revenir.</li>
+        <li><strong>La santé d'abord</strong>Bien bouger, prévenir les blessures, durer : la performance n'a de sens que si ton corps suit.</li>
+      </ul>
+      <a class="btn" href="contact.html">On en parle ?</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div><h2>Prêt à commencer ?</h2><p>Écris-moi sur Instagram, le message est déjà prêt. On cale ta première séance.</p></div>
+    <div class="commande reservation" data-sujet="Réservation d'une première séance" data-message="Salut Sam ! Je voudrais réserver un créneau pour une première séance de coaching. Quelles sont tes disponibilités ?" style="margin-top:0">
+      <a class="btn js-insta" href="https://ig.me/m/coach.saam" target="_blank" rel="noopener">Réserver un créneau</a>
+      <a class="lien-mail js-mail" href="#" style="color:#fff;align-self:center">ou par e-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Samuel Ben Hamou – Coach sportif · <a href="mentions-legales.html#mentions">Mentions légales</a> · <a href="mentions-legales.html#cgv">CGV</a> · <a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+    <span>Coaching individuel · Small group · Prépa Hyrox, ATHX &amp; CrossFit</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status">Message copié ! Colle-le dans la conversation Instagram et envoie 👍</div>
+<script src="site.js"></script>
+</body>
+</html>

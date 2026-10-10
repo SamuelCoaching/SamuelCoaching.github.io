@@ -1,756 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Samuel Benhamou – Coach Sportif</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root {
-      --color-1: #f5f9ff;
-      --color-2: #e6f7f1;
-      --color-3: #fff6ea;
-      --color-4: #f4ecff;
-      --color-5: #0f172a;
-      --accent: #f97316;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #0f172a;
-      line-height: 1.6;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(248, 250, 252, 0.9);
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-      color: #334155;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    main {
-      width: 100%;
-    }
-
-    section {
-      padding: 4.5rem 1.5rem;
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    h1 {
-      font-size: 2.1rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    p.lead {
-      font-size: 1.05rem;
-      color: #475569;
-      max-width: 650px;
-    }
-
-    .tagline {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(249, 115, 22, 0.08);
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #c2410c;
-      margin-bottom: 0.8rem;
-    }
-
-    .tagline::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      margin-right: 0.4rem;
-      background: var(--accent);
-    }
-
-    .hero {
-      background: linear-gradient(180deg, var(--color-1), var(--color-2));
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .badge {
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      font-size: 0.8rem;
-      color: #475569;
-      background: rgba(255, 255, 255, 0.85);
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
-    }
-
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.9);
-      color: #0f172a;
-      border: 1px solid #e5e7eb;
-    }
-
-    .btn-ghost:hover {
-      background: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: #6b7280;
-      margin-top: 0.75rem;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 1.5rem;
-      padding: 1.8rem 1.5rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-      border: 1px solid #e5e7eb;
-    }
-
-    .hero-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-card ul {
-      list-style: none;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-
-    .hero-card li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-card li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 0.4rem;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .coaching {
-      background: linear-gradient(180deg, var(--color-2), var(--color-3));
-    }
-
-    .coaching-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.8rem;
-    }
-
-    .coaching-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.4rem;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-    }
-
-    .coaching-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .coaching-card p {
-      font-size: 0.92rem;
-      color: #4b5563;
-      margin-bottom: 0.7rem;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      border-radius: 999px;
-      padding: 0.2rem 0.6rem;
-      background: #eff6ff;
-      color: #1d4ed8;
-    }
-
-    .pill-alt {
-      background: #ecfdf5;
-      color: #15803d;
-    }
-
-    .health {
-      background: linear-gradient(180deg, var(--color-3), var(--color-4));
-    }
-
-    .health-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .highlight-box {
-      border-radius: 1.25rem;
-      padding: 1.2rem 1.1rem;
-      border: 1px dashed rgba(148, 163, 184, 0.8);
-      background: rgba(255, 255, 255, 0.85);
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-
-    .highlight-box strong {
-      color: #0f172a;
-    }
-
-    .health-list {
-      list-style: none;
-      font-size: 0.9rem;
-      color: #4b5563;
-      display: grid;
-      gap: 0.6rem;
-      margin-top: 0.9rem;
-    }
-
-    .health-item {
-      display: flex;
-    }
-
-    .health-bullet {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      margin-right: 0.5rem;
-      background: #f9fafb;
-    }
-
-    .contact {
-      background: linear-gradient(180deg, var(--color-4), #e5ecff);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .contact-list {
-      list-style: none;
-      font-size: 0.95rem;
-      color: #374151;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #6b7280;
-      display: block;
-    }
-
-    .contact-link {
-      font-weight: 600;
-      text-decoration: none;
-      color: #1f2937;
-    }
-
-    .contact-link:hover {
-      color: var(--accent);
-    }
-
-    .qr-box {
-      border-radius: 1.25rem;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 1.4rem 1.2rem;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
-    }
-
-    .qr-placeholder {
-      width: 140px;
-      height: 140px;
-      border-radius: 0.75rem;
-      border: 1px dashed #cbd5f5;
-      margin: 0 auto 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: #9ca3af;
-      text-align: center;
-      padding: 0.5rem;
-    }
-
-    .qr-box p {
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-
-    .pricing {
-      background: linear-gradient(180deg, #e5ecff, var(--color-5));
-      color: #e5e7eb;
-    }
-
-    .pricing h2 {
-      color: #f9fafb;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .price-card {
-      background: rgba(15, 23, 42, 0.8);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-    }
-
-    .price-card.highlight {
-      border-color: var(--accent);
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.7);
-    }
-
-    .price-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-      color: #f9fafb;
-    }
-
-    .price-amount {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      color: var(--accent);
-    }
-
-    .price-note {
-      font-size: 0.8rem;
-      color: #cbd5f5;
-      margin-bottom: 0.8rem;
-    }
-
-    .price-card ul {
-      list-style: none;
-      font-size: 0.86rem;
-      color: #e5e7eb;
-    }
-
-    .price-card li {
-      margin-bottom: 0.4rem;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      padding: 1.3rem 1rem 1.6rem;
-      background: #020617;
-      color: #6b7280;
-    }
-
-    footer span {
-      color: #e5e7eb;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .coaching-grid,
-      .health-grid,
-      .contact-grid,
-      .pricing-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      header {
-        position: static;
-      }
-
-      nav {
-        display: none;
-      }
-
-      section {
-        padding: 3.2rem 1.2rem;
-      }
-
-      .hero-card {
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samuel Coaching – Coach sportif à Paris</title>
+<meta name="description" content="Samuel, coach sportif diplômé (BPJEPS) à Paris : coaching individuel en salle ou à domicile, small group, coaching entreprise, préparation Hyrox, ATHX et CrossFit, remise en forme et sport santé.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/favicon-192.png">
+<meta property="og:title" content="Samuel Coaching – Coach sportif à Paris">
+<meta property="og:description" content="Samuel, coach sportif diplômé (BPJEPS) à Paris : coaching individuel en salle ou à domicile, small group, coaching entreprise, préparation Hyrox, ATHX et CrossFit, remise en forme et sport santé.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">
-      SAMUEL <span>COACHING</span>
-    </div>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon-192.png" alt="">SAMUEL COACHING</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
     <nav>
-      <a href="#presentation">Présentation</a>
-      <a href="#coaching">Coaching</a>
-      <a href="#health">Sport santé</a>
-      <a href="#contact">Contact</a>
-      <a href="#tarifs">Tarifs</a>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="prepa-competition.html">Prépa compétition</a></li>
+        <li><a href="sport-sante.html">Sport santé</a></li>
+        <li><a href="programmation.html">Programmation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Réserver</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero" id="presentation">
-    <div class="wrapper hero-grid">
-      <div>
-        <div class="tagline">Coaching sportif – Salle, extérieur & domicile</div>
-        <h1>Samuel Benhamou, coach passionné par le sport et la santé</h1>
-        <p class="lead">
-          Son objectif : faire de chaque séance d'entraînement le moment fort de votre journée.
-          Rigueur, énergie et bonne humeur se combinent pour vous pousser à donner le meilleur de vous-même,
-          quel que soit votre niveau.
-        </p>
-
-        <div class="hero-badges">
-          <span class="badge">Coaching individuel & small group</span>
-          <span class="badge">Séances en salle ou en extérieur</span>
-          <span class="badge">Sport santé & bien-être durable</span>
-        </div>
-
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Réserver une séance</a>
-          <a href="#coaching" class="btn btn-ghost">Découvrir les coachings</a>
-        </div>
-
-        <p class="hero-note">
-          Ensemble, on construit un corps plus fort, plus mobile et un quotidien plus léger.
-        </p>
-      </div>
-
-      <aside class="hero-card">
-        <h3>Ce que je vous apporte :</h3>
-        <ul>
-          <li>Un accompagnement personnalisé, adapté à vos objectifs et à votre réalité (travail, famille, contraintes de temps).</li>
-          <li>Des séances rythmées, dynamiques et sécurisées, avec un suivi technique précis de vos mouvements.</li>
-          <li>Un cadre motivant pour retrouver le plaisir de bouger : performance, santé, silhouette ou simple besoin de se sentir mieux.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section class="coaching" id="coaching">
-    <div class="wrapper">
-      <h2>Les différents types de coaching</h2>
-
-      <div class="coaching-grid">
-        <article class="coaching-card">
-          <h3>Coaching individuel</h3>
-          <p>
-            Un accompagnement 100 % personnalisé, centré sur vos objectifs.
-            Nous construisons ensemble un programme sur mesure pour progresser de façon efficace et durable,
-            en respectant votre niveau et vos contraintes.
-          </p>
-          <p>
-            Séances possibles :
-          </p>
-          <div class="pill-row">
-            <span class="pill">À domicile</span>
-            <span class="pill">En salle</span>
-            <span class="pill">Extérieur (parc, stade…)</span>
-          </div>
-          <p style="margin-top:0.8rem;font-size:0.86rem;color:#6b7280;">
-            Idéal pour : remise en forme, reprise après une pause, perte de poids, préparation spécifique Hyrox et Crossfit.
-          </p>
-        </article>
-
-        <article class="coaching-card">
-          <h3>Coaching collectif & small group</h3>
-          <p>
-            L'énergie du groupe au service de vos performances. Des séances dynamiques, fun et structurées,
-            pour se dépasser ensemble dans une ambiance conviviale.
-          </p>
-          <p>
-            Formats proposés :
-          </p>
-          <div class="pill-row">
-            <span class="pill pill-alt">Cours collectifs en salle</span>
-            <span class="pill pill-alt">Bootcamp extérieur</span>
-            <span class="pill pill-alt">Small group (groupe réduit)</span>
-          </div>
-          <p style="margin-top:0.8rem;font-size:0.86rem;color:#6b7280;">
-            Parfait pour se motiver à plusieurs, progresser techniquement et garder une vraie régularité.
-            Pour le small group, <strong>me contacter directement</strong> pour organiser le créneau et la formule adaptée.
-          </p>
-        </article>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="kicker">Coach sportif · Paris</span>
+      <h1>Plus fort,<br>plus mobile,<br><em>plus léger.</em></h1>
+      <p>Chaque séance doit être le moment fort de ta journée : de la rigueur, de l'énergie et de la bonne humeur, quel que soit ton niveau.</p>
+      <div class="ctas">
+        <a class="btn" href="contact.html">Réserver un créneau</a>
+        <a class="btn ghost" href="coaching.html">Découvrir les coachings</a>
       </div>
     </div>
-  </section>
+    <div class="hero-photo"><img src="img/hero.jpg" alt="Samuel en course lors de l'ATHX Paris 2026"></div>
+  </div>
+</section>
 
-  <section class="health" id="health">
-    <div class="wrapper health-grid">
-      <div>
-        <h2>Sport santé, mobilité & bien-être physique</h2>
-        <p class="lead" style="margin-bottom:1rem;">
-          Au-delà de la performance, mon approche est orientée <strong>sport santé</strong>.
-          L’objectif est de vous aider à construire un corps qui bouge bien, qui bouge longtemps,
-          et qui vous donne confiance au quotidien.
-        </p>
-
-        <ul class="health-list">
-          <li class="health-item">
-            <div class="health-bullet">1</div>
-            <div>
-              <strong>Mobilité & souplesse</strong><br>
-              Amélioration de vos amplitudes de mouvement, réduction des raideurs, travail postural
-              pour un corps plus libre et plus fluide.
-            </div>
-          </li>
-          <li class="health-item">
-            <div class="health-bullet">2</div>
-            <div>
-              <strong>Renforcement global</strong><br>
-              Un corps solide, gainé et équilibré pour protéger vos articulations, prévenir les blessures
-              et faciliter tous les gestes du quotidien.
-            </div>
-          </li>
-          <li class="health-item">
-            <div class="health-bullet">3</div>
-            <div>
-              <strong>Énergie & équilibre de vie</strong><br>
-              Retrouver le plaisir de bouger, diminuer le stress, mieux dormir
-              et vous sentir plus léger(e) au travail comme à la maison.
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <aside class="highlight-box">
-        <strong><sup></sup>Construire votre routine bien-être</strong><br><br>
-        On ne se contente pas de cocher une séance dans la semaine.  
-        Ensemble, on installe des habitudes simples et réalistes :
-        <ul style="margin-top:0.7rem;padding-left:1.1rem;">
-          <li>intégrer davantage de mouvement dans vos journées ;</li>
-          <li>apprendre à mieux récupérer entre les séances ;</li>
-          <li>trouver un équilibre entre progrès, plaisir et contraintes du quotidien.</li>
-        </ul>
-        <br>
-        L’idée : faire du sport un pilier de votre santé, pas une contrainte de plus dans l’agenda.
-      </aside>
+<section class="about-court" style="background:var(--sable-2)">
+  <div class="wrap">
+    <img src="img/portrait.jpg" alt="Portrait de Samuel Ben Hamou">
+    <div>
+      <span class="kicker">Moi, c'est Sam</span>
+      <h2>Mon job ? Te faire progresser. Vraiment.</h2>
+      <p><strong style="color:var(--bleu)">Coach sportif diplômé (BPJEPS) à Paris.</strong><br>
+      En salle, à domicile ou en entreprise.<br>
+      Coaching individuel ou small group.<br>
+      Prépa Hyrox, ATHX et CrossFit, remise en forme, perte de poids, sport santé.</p>
+      <a class="btn" href="a-propos.html">Mieux me connaître</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="wrapper contact-grid">
-      <div>
-        <h2>Informations de contact & prise de rendez-vous</h2>
-        <p class="lead" style="margin-bottom:1rem;">
-          Pour réserver une séance, poser vos questions ou discuter de votre projet,
-          vous pouvez me contacter directement via les canaux suivants :
-        </p>
-
-        <ul class="contact-list">
-          <li>
-            <span class="contact-label">E-mail</span>
-            <a class="contact-link" href="mailto:Samuel.coaching.pro@gmail.com">
-              Samuel.coaching.pro@gmail.com
-            </a>
-          </li>
-          <li>
-            <span class="contact-label">Instagram</span>
-            <a class="contact-link" href="https://instagram.com/coach.saam" target="_blank" rel="noopener">
-              @coach.saam
-            </a>
-          </li>
-          <li>
-            <span class="contact-label">Coaching small group</span>
-            <span>
-              Me contacter pour organiser les créneaux, le lieu et la formule adaptés à votre groupe.
-            </span>
-          </li>
-        </ul>
-
-        <p style="font-size:0.9rem;color:#6b7280;margin-top:1rem;">
-          Décrivez-moi vos objectifs, vos disponibilités et votre niveau actuel :
-          je vous proposerai un accompagnement cohérent et progressif.
-        </p>
-      </div>
-
-      <aside class="qr-box">
-<a href="https://instagram.com/coach.saam" target="_blank">
-  <img src="qr-instagram.png" alt="QR Code Instagram Coach Saam" style="width:140px;height:140px;border-radius:12px;">
-</a>
-<p>Scannez pour accéder directement à mon Instagram.</p>
-        </p>
-      </aside>
+<section>
+  <div class="wrap">
+    <span class="kicker">Ce que je propose</span>
+    <h2>Trouve ce qui te correspond</h2>
+    <div class="grid3 grid4 apercu">
+      <div class="card"><h3>Coaching</h3><p>En individuel, en small group ou en entreprise, en salle ou à domicile. Tarifs clairs : séance à 70 €, pack de 10 à 600 €.</p><a class="btn" href="coaching.html">Voir les coachings</a></div>
+      <div class="card"><h3>Prépa compétition</h3><p>Hyrox, ATHX, CrossFit : diagnostic, plan par cycles et stratégie du jour J, par un coach qui se teste aussi en compétition.</p><a class="btn" href="prepa-competition.html">Préparer ma course</a></div>
+      <div class="card"><h3>Sport santé</h3><p>Mobilité, renforcement et prévention des blessures : bouger mieux, avoir moins mal au dos et retrouver de l'énergie, à ton rythme.</p><a class="btn" href="sport-sante.html">Bouger mieux</a></div>
+      <div class="card"><h3>Programmation</h3><p>Un programme 100 % personnalisé pour t'entraîner en autonomie : Hyrox, ATHX, CrossFit, remise en forme, perte de poids, sport santé.</p><a class="btn" href="programmation.html">Voir les programmes</a></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="pricing" id="tarifs">
-    <div class="wrapper">
-      <h2>Tarifs des coachings</h2>
-      <p style="font-size:0.9rem;color:#cbd5f5;margin-top:0.4rem;">
-        Les séances sont conçues pour être denses, efficaces et adaptées à votre niveau.  
-        Ensemble, on investit dans votre santé et votre progression.
-      </p>
-
-      <div class="pricing-grid">
-        <article class="price-card">
-          <h3>Coaching individuel à la séance</h3>
-          <div class="price-amount">70 € / séance</div>
-          <div class="price-note">Paiement à la séance, idéal pour tester ou pour un besoin ponctuel.</div>
-          <ul>
-            <li>Durée moyenne : 1 heure</li>
-            <li>À domicile, en salle ou en extérieur</li>
-            <li>Programme personnalisé selon vos objectifs</li>
-          </ul>
-        </article>
-
-        <article class="price-card highlight">
-          <h3>Pack 10 séances individuelles</h3>
-          <div class="price-amount">600 € le pack</div>
-          <div class="price-note">Soit 60 € par séance – engagement sur votre progression.</div>
-          <ul>
-            <li>Suivi régulier et progression planifiée</li>
-            <li>Adaptations en fonction de vos disponibilités</li>
-            <li>Idéal pour transformer durablement vos habitudes</li>
-          </ul>
-        </article>
-
-        <article class="price-card">
-          <h3>Coaching small group</h3>
-          <div class="price-amount">Sur devis</div>
-          <div class="price-note">Tarif en fonction du nombre de personnes.</div>
-          <ul>
-            <li>Groupe réduit pour garder un suivi de qualité</li>
-            <li>Ambiance motivante & dynamique</li>
-            <li>Me contacter pour définir la formule la plus adaptée</li>
-          </ul>
-        </article>
-      </div>
+<section class="cta-band">
+  <div class="wrap">
+    <div><h2>Prêt à commencer ?</h2><p>Écris-moi sur Instagram, le message est déjà prêt. On cale ta première séance.</p></div>
+    <div class="commande reservation" data-sujet="Réservation d'une première séance" data-message="Salut Sam ! Je voudrais réserver un créneau pour une première séance de coaching. Quelles sont tes disponibilités ?" style="margin-top:0">
+      <a class="btn js-insta" href="https://ig.me/m/coach.saam" target="_blank" rel="noopener">Réserver un créneau</a>
+      <a class="lien-mail js-mail" href="#" style="color:#fff;align-self:center">ou par e-mail</a>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer>
-  <span>Samuel Benhamou – Coach Sportif</span> • Coaching individuel, collectif & small group  
-  <br>En salle, en extérieur ou à domicile.
+  <div class="wrap">
+    <span>© 2026 Samuel Ben Hamou – Coach sportif · <a href="mentions-legales.html#mentions">Mentions légales</a> · <a href="mentions-legales.html#cgv">CGV</a> · <a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+    <span>Coaching individuel · Small group · Prépa Hyrox, ATHX &amp; CrossFit</span>
+  </div>
 </footer>
-
+<div class="toast" id="toast" role="status">Message copié ! Colle-le dans la conversation Instagram et envoie 👍</div>
+<script src="site.js"></script>
 </body>
 </html>

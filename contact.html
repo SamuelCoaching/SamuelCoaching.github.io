@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact et réservation – Samuel Coaching, coach sportif à Paris</title>
+<meta name="description" content="Réserve ton créneau avec Samuel, coach sportif à Paris : message pré-rempli sur Instagram ou par e-mail.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/favicon-192.png">
+<meta property="og:title" content="Contact et réservation – Samuel Coaching, coach sportif à Paris">
+<meta property="og:description" content="Réserve ton créneau avec Samuel, coach sportif à Paris : message pré-rempli sur Instagram ou par e-mail.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon-192.png" alt="">SAMUEL COACHING</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <ul>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="prepa-competition.html">Prépa compétition</a></li>
+        <li><a href="sport-sante.html">Sport santé</a></li>
+        <li><a href="programmation.html">Programmation</a></li>
+        <li><a href="contact.html" class="actif">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Réserver</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contact</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem);color:var(--blanc);margin-bottom:.6rem">Réserve ton créneau</h1>
+      <p class="lead">Écris-moi sur Instagram : le message est déjà prêt, tu n'as plus qu'à l'envoyer. Dis-moi ton objectif, ton niveau et tes disponibilités, je te réponds rapidement pour caler ta première séance.</p>
+      <div class="commande reservation" data-sujet="Réservation d'une première séance" data-message="Salut Sam ! Je voudrais réserver un créneau pour une première séance de coaching. Quelles sont tes disponibilités ?" style="margin:0 0 2rem">
+        <a class="btn js-insta" href="https://ig.me/m/coach.saam" target="_blank" rel="noopener">Réserver sur Instagram</a>
+        <a class="btn ghost js-mail" href="#">Ou par e-mail</a>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:samuel.coaching.pro@gmail.com?subject=Coaching%20-%20demande%20d'informations">samuel.coaching.pro@gmail.com</a></li>
+        <li><span>Instagram</span><a href="https://www.instagram.com/coach.saam/" target="_blank" rel="noopener">@coach.saam</a></li>
+        <li><span>Zone</span>Paris et proche banlieue · en salle, à domicile ou en entreprise</li>
+      </ul>
+    </div>
+    <div class="qr"><img src="img/qr-instagram.png" alt="QR code Instagram @coach.saam"><strong>Suis-moi sur Instagram</strong></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Samuel Ben Hamou – Coach sportif · <a href="mentions-legales.html#mentions">Mentions légales</a> · <a href="mentions-legales.html#cgv">CGV</a> · <a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+    <span>Coaching individuel · Small group · Prépa Hyrox, ATHX &amp; CrossFit</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status">Message copié ! Colle-le dans la conversation Instagram et envoie 👍</div>
+<script src="site.js"></script>
+</body>
+</html>
