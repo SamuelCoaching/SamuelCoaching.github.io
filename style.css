@@ -182,6 +182,8 @@ nav .nav-cta.commande{display:block;margin:0;gap:0}
 .formats .commande.reservation .btn{min-width:0}
 .grid4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:1100px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.grid4{grid-template-columns:1fr}}
+.apercu .card .btn{white-space:nowrap;padding:.8rem 1.15rem;font-size:.8rem}
 .pour-qui{margin-top:1.6rem;gap:12px;max-width:760px}
 .pour-qui li{font-size:1.1rem}
 .note-sante{margin:2rem 0 0;padding:14px 18px;border-left:3px solid var(--orange);background:var(--blanc);border-radius:0 10px 10px 0;color:var(--gris);font-size:.95rem;max-width:760px}
