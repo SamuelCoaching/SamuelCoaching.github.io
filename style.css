@@ -161,7 +161,9 @@ nav .nav-cta.commande{display:block;margin:0;gap:0}
 .formats .wrap{display:grid;gap:72px}
 .format{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .format img{width:100%;height:420px;object-fit:cover;object-position:50% 20%;border-radius:var(--radius)}
-.format.inverse img{order:2}
+.format.inverse .fig-format{order:2}
+.fig-format{position:relative;margin:0}
+.fig-format figcaption{position:absolute;right:10px;bottom:10px;background:rgba(21,42,70,.7);color:#fff;font-size:.75rem;padding:2px 8px;border-radius:6px}
 .format h2{font-size:clamp(1.8rem,3.5vw,2.4rem)}
 .format p{color:var(--gris);margin-bottom:1.2rem}
 .inclus-titre{font-size:1.05rem;letter-spacing:.06em;color:var(--orange);margin-bottom:.6rem}
@@ -185,7 +187,7 @@ nav .nav-cta.commande{display:block;margin:0;gap:0}
 @media (max-width:900px){
   .formats .wrap{gap:48px}
   .format{grid-template-columns:1fr;gap:20px}
-  .format.inverse img{order:0}
+  .format.inverse .fig-format{order:0}
   .format img{height:260px}
   nav .nav-cta a{display:inline-block;margin-top:6px}
   .about-court .wrap{grid-template-columns:1fr;gap:28px}
